@@ -19,6 +19,7 @@ const MainLayout: FC<ILayout> = ({ children }) => {
           </div>
         </div>
       </div>
+      {/* <DialingSection /> */}
     </main>
   );
 };

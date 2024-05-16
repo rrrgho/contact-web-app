@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "@radix-ui/react-slot": "^1.0.2",
+    "@reduxjs/toolkit": "^2.2.5",
     "add": "^2.0.6",
     "autoprefixer": "^10.4.19",
     "card": "^2.5.4",

@@ -4,9 +4,17 @@ import AvatarList from "../components/AvatarList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
-const ContactItem: FC = () => {
+interface IContactItem {
+  onCalling: () => void;
+  onClick: () => void;
+}
+
+const ContactItem: FC<IContactItem> = ({ onCalling, onClick }) => {
   return (
-    <div className="contact-item-wrapper mt-2 flex cursor-pointer content-center item-center justify-between hover:bg-amber-100 p-2 rounded-lg">
+    <div
+      className="contact-item-wrapper mt-2 flex cursor-pointer content-center item-center justify-between hover:bg-amber-100 p-2 rounded-lg"
+      onClick={onClick}
+    >
       <div className="flex flex-row">
         <AvatarList />
         <div className="ms-4 flex flex-col">
@@ -15,11 +23,7 @@ const ContactItem: FC = () => {
         </div>
       </div>
       <div className="justify-center content-center item-center">
-        <button
-          onClick={() => {
-            alert("clicked");
-          }}
-        >
+        <button onClick={onCalling}>
           <div className="p-3 w-[40px] h-[40px] bg-primary rounded-full justify-center content-center item-center hover:bg-amber-600">
             <FontAwesomeIcon size="sm" className="text-white" icon={faPhone} />
           </div>
