@@ -1,20 +1,30 @@
-import { useAppStore } from "../lib/hooks";
-import { IDialingReducer } from "../store/DialingReducer";
-import { SET_DIALING } from "../store/action";
+import { IContactItem } from "../d.type";
+import { useAppSelector, useAppStore } from "../lib/hooks";
+import { END_DIALING, SET_DIALING } from "../store/action";
 
 export const useDial = () => {
   const store = useAppStore();
+  const contactSelected: IContactItem = useAppSelector(
+    (state) => state.DialingReducer
+  );
 
-  const onDialing = (payload: IDialingReducer) => {
+  const onDialing = (payload: IContactItem) => {
     store.dispatch(SET_DIALING(payload));
   };
 
+  const onDialingSelectedContact = () => {
+    const payload = { status: true };
+    store.dispatch(END_DIALING(payload));
+  };
+
   const endDialing = () => {
-    store.dispatch(SET_DIALING({ status: false, name: "", phone: "" }));
+    const payload = { status: false };
+    store.dispatch(END_DIALING(payload));
   };
 
   return {
     onDialing,
+    onDialingSelectedContact,
     endDialing,
   };
 };
