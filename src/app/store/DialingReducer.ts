@@ -1,30 +1,38 @@
-export type IDialingReducer = {
-  status: boolean;
-  name: string;
-  phone: string;
-};
+import { IContactItem } from "../d.type";
 
 interface IAction {
   type: string;
-  payload?: IDialingReducer;
+  payload?: IContactItem;
 }
 
-const DialingState: IDialingReducer = {
+const DialingState: IContactItem = {
   status: false,
-  name: "",
+  first_name: "",
+  last_name: "",
+  age: "",
+  photo: "",
   phone: "",
 };
 
 export const DialingReducer = (
-  state: IDialingReducer = DialingState,
+  state: IContactItem = DialingState,
   action: IAction
 ) => {
   if (action.type === "SET_DIALING") {
     return {
       ...state,
       status: action.payload?.status,
-      name: action.payload?.name,
+      first_name: action.payload?.first_name,
+      last_name: action.payload?.last_name,
+      age: action.payload?.age,
+      photo: action.payload?.photo,
       phone: action.payload?.phone,
+    };
+  }
+  if (action.type === "END_DIALING") {
+    return {
+      ...state,
+      status: action.payload?.status,
     };
   }
   return state;

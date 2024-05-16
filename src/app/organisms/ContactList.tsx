@@ -10,14 +10,17 @@ const ContactList: FC = () => {
   const handleCalling = () => {
     const payload = {
       status: true,
-      name: "rian",
+      first_name: "rian",
+      last_name: "iregho",
+      age: "24",
+      photo: "r",
       phone: "0912121212",
     };
     onDialing(payload);
   };
 
   const handleItemClick = () => {
-    alert("Item Clicked");
+    // alert("Item Clicked");
   };
 
   const dialing = useAppSelector((state) => state.DialingReducer);
