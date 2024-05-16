@@ -1,6 +1,5 @@
-import Image from "next/image";
-import MainLayout from "./organisms/Layout";
 import ContactList from "./organisms/ContactList";
+import MainLayout from "./organisms/Layout";
 
 export default function Home() {
   return (
