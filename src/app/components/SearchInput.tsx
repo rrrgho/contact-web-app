@@ -12,11 +12,11 @@ const SearchInput = () => {
           placeholder="Search ..."
           className="border-0 font-mainRegular bg-transparent focus-visible:ring-transparent text-primary outline-0"
         />
-        <div className="w-[30px] justify-center content-center item-center">
+        <div className="justify-center content-center item-center">
           <FontAwesomeIcon
             icon={faSearch}
             fixedWidth
-            className="text-9xl text-primary"
+            className="text-2xl text-primary"
           />
         </div>
       </div>
