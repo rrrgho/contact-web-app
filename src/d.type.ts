@@ -1,7 +1,7 @@
 interface IContactItem {
-  status: boolean | undefined;
-  first_name: string | undefined;
-  last_name: string | undefined;
+  status?: boolean | undefined;
+  firstName: string | undefined;
+  lastName: string | undefined;
   age: string | undefined;
   photo: string | undefined;
   phone: string | undefined;

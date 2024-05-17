@@ -2,7 +2,7 @@
 import React, { FC } from "react";
 import Header from "./Header";
 import DialingSection from "./DialingSection";
-import { useAppSelector } from "../lib/hooks";
+import { useAppSelector } from "../libstore/hooks";
 import ContactDetail from "./ContactDetail";
 import ContactAddSection from "./ContactAddSection";
 
@@ -11,7 +11,7 @@ interface ILayout {
 }
 
 const MainLayout: FC<ILayout> = ({ children }) => {
-  const dialing = useAppSelector((state) => state.DialingReducer);
+  const dialing = useAppSelector((state) => state.dialing);
   return (
     <main>
       <div className="container bg-transparent px-5 py-5 md:px-[200px] md:py-10">

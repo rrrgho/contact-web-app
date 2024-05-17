@@ -1,7 +1,7 @@
 "use client";
 import React, { FC } from "react";
-import AvatarMedium from "../components/AvatarMedium";
-import Label from "../components/Label";
+import AvatarMedium from "../app/components/AvatarMedium";
+import Label from "../app/components/Label";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TypeAnimation } from "react-type-animation";
 import {
@@ -12,7 +12,7 @@ import {
   faWaveSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDial } from "../hooks/useDial";
-import { useAppSelector } from "../lib/hooks";
+import { useAppSelector } from "../libstore/hooks";
 import { IContactItem } from "../d.type";
 
 interface IContactDetail {
@@ -20,21 +20,24 @@ interface IContactDetail {
 }
 
 const ContactDetail: FC<IContactDetail> = ({ onDailing }) => {
-  const { endDialing, onDialingSelectedContact } = useDial();
+  const { onDialing, endDialing } = useDial();
+  const contactSelected = useAppSelector((state) => state.dialing);
   return (
     <div>
       <div className="flex justify-center w-full">
         <AvatarMedium />
       </div>
       <div className="flex justify-center w-full mt-2">
-        <Label text="Rian Gho" />
+        <Label
+          text={contactSelected.firstName + " " + contactSelected.lastName}
+        />
       </div>
       <div className="flex justify-center w-full">
-        <span className="font-mainRegular">08219329392</span>
+        <span className="font-mainRegular">{contactSelected.phone}</span>
       </div>
       {!onDailing ? (
         <div className="flex justify-center w-full mt-3">
-          <button onClick={onDialingSelectedContact}>
+          <button onClick={onDialing}>
             <div className="p-3 ms-3 w-[40px] h-[40px] bg-primary rounded-full justify-center content-center item-center hover:bg-amber-600">
               <FontAwesomeIcon
                 size="sm"

@@ -2,10 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { faImage, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC, useState } from "react";
-import ButtonPrimary from "../components/ButtonPrimary";
-import Label from "../components/Label";
-import TextInput from "../components/TextInput";
-import ButtonLight from "../components/ButtonLight";
+import ButtonPrimary from "../app/components/ButtonPrimary";
+import Label from "../app/components/Label";
+import TextInput from "../app/components/TextInput";
+import ButtonLight from "../app/components/ButtonLight";
 import Image from "next/image";
 
 const ContactAddSection: FC = () => {
