@@ -1,9 +1,10 @@
 "use client";
 import React, { FC } from "react";
 import Header from "./Header";
-import ContactDetail from "./ContactDetail";
 import DialingSection from "./DialingSection";
 import { useAppSelector } from "../lib/hooks";
+import ContactDetail from "./ContactDetail";
+import ContactAddSection from "./ContactAddSection";
 
 interface ILayout {
   children: React.ReactNode;
@@ -24,6 +25,7 @@ const MainLayout: FC<ILayout> = ({ children }) => {
           </div>
         </div>
       </div>
+      {/* <ContactAddSection /> */}
       {dialing.status && <DialingSection />}
     </main>
   );
