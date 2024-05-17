@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import SearchInput from "../components/SearchInput";
+import SearchInput from "../app/components/SearchInput";
 
 const Header: FC = () => {
   return (

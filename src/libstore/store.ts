@@ -1,11 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer from "../store/reducer";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import { contactListApi } from "../services/contact";
+import reducer from "../store/reducer";
+import { contactListApi } from "@/store/contact/contact.api";
 
 export const makeStore = () => {
   return configureStore({
-    [contactListApi.reducerPath]: contactListApi.reducer,
     reducer,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(contactListApi.middleware),

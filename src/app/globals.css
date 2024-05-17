@@ -5,67 +5,67 @@
 
 @font-face {
   font-family: 'Main-Black';
-  src: url('./assets/fonts/Poppins-Black.ttf');
+  src: url('../assets/fonts/Poppins-Black.ttf');
 }
 @font-face {
   font-family: 'Main-Bold';
-  src: url('./assets/fonts/Poppins-Bold.ttf');
+  src: url('../assets/fonts/Poppins-Bold.ttf');
 }
 @font-face {
   font-family: 'Main-ExtraBold';
-  src: url('./assets/fonts/Poppins-ExtraBold.ttf');
+  src: url('../assets/fonts/Poppins-ExtraBold.ttf');
 }
 @font-face {
   font-family: 'Main-ExtraLight';
-  src: url('./assets/fonts/Poppins-ExtraLight.ttf');
+  src: url('../assets/fonts/Poppins-ExtraLight.ttf');
 }
 @font-face {
   font-family: 'Main-Light';
-  src: url('./assets/fonts/Poppins-Light.ttf');
+  src: url('../assets/fonts/Poppins-Light.ttf');
 }
 @font-face {
   font-family: 'Main-Medium';
-  src: url('./assets/fonts/Poppins-Medium.ttf');
+  src: url('../assets/fonts/Poppins-Medium.ttf');
 }
 @font-face {
   font-family: 'Main-Regular';
-  src: url('./assets/fonts/Poppins-Regular.ttf');
+  src: url('../assets/fonts/Poppins-Regular.ttf');
 }
 @font-face {
   font-family: 'Main-Thin';
-  src: url('./assets/fonts/Poppins-Thin.ttf');
+  src: url('../assets/fonts/Poppins-Thin.ttf');
 }
 @font-face {
   font-family: 'Cairo-Black';
-  src: url('./assets/fonts/Cairo-Black.ttf');
+  src: url('../assets/fonts/Cairo-Black.ttf');
 }
 @font-face {
   font-family: 'Cairo-Bold';
-  src: url('./assets/fonts/Cairo-Bold.ttf');
+  src: url('../assets/fonts/Cairo-Bold.ttf');
 }
 @font-face {
   font-family: 'Cairo-ExtraBold';
-  src: url('./assets/fonts/Cairo-ExtraBold.ttf');
+  src: url('../assets/fonts/Cairo-ExtraBold.ttf');
 }
 @font-face {
   font-family: 'Cairo-ExtraLight';
-  src: url('./assets/fonts/Cairo-ExtraLight.ttf');
+  src: url('../assets/fonts/Cairo-ExtraLight.ttf');
 }
 @font-face {
   font-family: 'Cairo-Light';
-  src: url('./assets/fonts/Cairo-Light.ttf');
+  src: url('../assets/fonts/Cairo-Light.ttf');
 }
 @font-face {
   font-family: 'Cairo-Medium';
-  src: url('./assets/fonts/Cairo-Medium.ttf');
+  src: url('../assets/fonts/Cairo-Medium.ttf');
 }
 @font-face {
   font-family: 'Cairo-Regular';
-  src: url('./assets/fonts/Cairo-Regular.ttf');
+  src: url('../assets/fonts/Cairo-Regular.ttf');
 }
 @font-face {
   font-family: 'Cairo-SemiBold';
-  src: url('./assets/fonts/Cairo-SemiBold.ttf');
+  src: url('../assets/fonts/Cairo-SemiBold.ttf');
 }
 
 @layer base {
