@@ -20,7 +20,7 @@ interface IContactDetail {
 }
 
 const ContactDetail: FC<IContactDetail> = ({ onDailing }) => {
-  const { endDialing, onDialing, onDialingSelectedContact } = useDial();
+  const { endDialing, onDialingSelectedContact } = useDial();
   return (
     <div>
       <div className="flex justify-center w-full">
