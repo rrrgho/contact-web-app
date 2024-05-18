@@ -8,6 +8,7 @@ import { IContactItem } from "@/d.type";
 
 const initialState: DialingState = {
   status: false,
+  id: "",
   firstName: "",
   lastName: "",
   age: "",
@@ -26,6 +27,7 @@ export const dialingSlice = createSlice({
       state,
       { payload }: PayloadAction<IContactItem>
     ): void => {
+      state.id = payload.id;
       state.firstName = payload.firstName;
       state.lastName = payload.lastName;
       state.age = payload.age;

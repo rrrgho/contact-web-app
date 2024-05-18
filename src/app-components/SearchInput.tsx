@@ -6,7 +6,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const SearchInput = () => {
   return (
-    <div className="bg-white w-full md:w-[400px] px-8 py-2 rounded-full">
+    <div className="bg-white w-full lg:w-[400px] px-8 py-2 rounded-full">
       <div className="flex flex-row justify-between">
         <Input
           placeholder="Search ..."
