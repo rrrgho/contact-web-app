@@ -1,4 +1,5 @@
 export type DialingState = {
+  id?: string;
   status: boolean | undefined;
   firstName: string | undefined;
   lastName: string | undefined;

@@ -8,9 +8,18 @@ interface ITextinput {
   icon?: any;
   placeholder?: string;
   onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
+  props?: any;
+  ref?: any;
+  defaultValue?: string;
 }
 
-const TextInput: FC<ITextinput> = ({ icon, placeholder, onChange }) => {
+const TextInput: FC<ITextinput> = ({
+  icon,
+  placeholder,
+  onChange,
+  defaultValue,
+  props,
+}) => {
   return (
     <div className="bg-white w-full">
       <div className="flex flex-row justify-between">
@@ -27,6 +36,8 @@ const TextInput: FC<ITextinput> = ({ icon, placeholder, onChange }) => {
           placeholder={placeholder ?? "Placeholder ..."}
           className="border border-solid font-mainRegular bg-transparent text-primary ms-2 outline-primary"
           onChange={onChange}
+          defaultValue={defaultValue}
+          {...props}
         />
       </div>
     </div>

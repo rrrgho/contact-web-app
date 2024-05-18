@@ -9,10 +9,10 @@ const DialingSection = () => {
       style={{ background: "rgba(0,0,0,0.4)" }}
     >
       <div className="w-full flex justify-end">
-        <div className="w-full md:w-1/5 p-5">
+        <div className="w-full lg:w-1/5 p-5">
           <Card>
             <CardContent className="py-10">
-              <ContactDetail onDailing={true} />
+              <ContactDetail triggerEdit={() => {}} onDailing={true} />
             </CardContent>
           </Card>
         </div>

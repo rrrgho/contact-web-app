@@ -1,65 +1,64 @@
 "use client";
-import { FC } from "react";
-import Label from "../app/components/Label";
-import { useDial } from "../hooks/useDial";
-import { useAppSelector } from "../libstore/hooks";
-import ContactItem from "../moleculs/ContactItem";
-import { useGetContactAllQuery } from "@/store/contact/contact.api";
 import { IContactItem } from "@/d.type";
+import { useGetContactAllQuery } from "@/store/contact/contact.api";
+import { FC, useEffect } from "react";
+import Label from "../app-components/Label";
+import { useDial } from "../hooks/useDial";
+import ContactItem, { ContactItemLoading } from "../moleculs/ContactItem";
+import { useAppSelector, useAppStore } from "@/libstore/hooks";
+import { SET_CONTACT_LIST } from "@/store/contactlist/contactlist.slice";
 
 const ContactList: FC = () => {
+  const store = useAppStore();
   const { onDialing, onDialingSelectedContact } = useDial();
   const { data, error, isLoading } = useGetContactAllQuery("");
+  const contactList = useAppSelector((state) => state.contactList.data);
   const handleCalling = () => {
-    const payload = {
-      status: true,
-      firstName: "rian",
-      lastName: "iregho",
-      age: "24",
-      photo: "r",
-      phone: "0912121212",
-    };
     onDialing();
-    onDialingSelectedContact(payload);
   };
 
   const handleItemClick = (item: IContactItem) => {
     onDialingSelectedContact(item);
   };
 
+  useEffect(() => {
+    if (!isLoading) {
+      const firstItem: any = data?.data[0];
+      onDialingSelectedContact(firstItem);
+      store.dispatch(SET_CONTACT_LIST(data?.data));
+    }
+  }, [isLoading]);
+
   return (
-    <main className="px-3 md:px-5">
-      <button
-        onClick={() => {
-          console.log(data?.data);
-        }}
-      >
-        sasa
-      </button>
+    <main className="px-3 lg:px-5">
       <div>
         <Label text="Contact Lists" />
       </div>
-      {!isLoading ? (
-        <>
-          {data?.data.map((item: IContactItem) => {
-            return (
-              <div className="mt-3">
-                <ContactItem
-                  firstName={item.firstName ?? ""}
-                  lastName={item.lastName ?? ""}
-                  phone="081222627367"
-                  onCalling={handleCalling}
-                  onClick={() => {
-                    handleItemClick(item);
-                  }}
-                />
-              </div>
-            );
-          })}
-        </>
-      ) : (
-        <span>Loading ...</span>
-      )}
+      <div className="h-[700px] overflow-auto">
+        {!isLoading ? (
+          <>
+            {contactList.map((item: IContactItem) => {
+              return (
+                <div key={item.id} className="mt-3">
+                  <ContactItem
+                    firstName={item.firstName ?? ""}
+                    lastName={item.lastName ?? ""}
+                    phone="081222627367"
+                    onCalling={handleCalling}
+                    onClick={() => {
+                      handleItemClick(item);
+                    }}
+                  />
+                </div>
+              );
+            })}
+          </>
+        ) : (
+          new Array(9).fill("").map(() => {
+            return <ContactItemLoading />;
+          })
+        )}
+      </div>
     </main>
   );
 };

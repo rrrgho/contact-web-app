@@ -1,4 +1,5 @@
 export type ContactState = {
+  id?: string;
   status: boolean | undefined;
   firstName: string | undefined;
   lastName: string | undefined;
@@ -7,6 +8,7 @@ export type ContactState = {
   phone: string | undefined;
 };
 
-export type ContactList = {
+export type GetContactList = {
+  message: string;
   data: Array<ContactState>;
 };
